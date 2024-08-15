@@ -1,0 +1,28 @@
+Index: app/src/main/java/com/example/plhi_har/presentation/NavGraph.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/plhi_har/presentation/NavGraph.kt b/app/src/main/java/com/example/plhi_har/presentation/NavGraph.kt
+--- a/app/src/main/java/com/example/plhi_har/presentation/NavGraph.kt	
++++ b/app/src/main/java/com/example/plhi_har/presentation/NavGraph.kt	(date 1723105254326)
+@@ -1,2 +1,19 @@
+ package com.example.plhi_har.presentation
+ 
++
++import androidx.compose.runtime.Composable
++import androidx.navigation.NavHostController
++import androidx.navigation.compose.NavHost
++import androidx.navigation.compose.composable
++
++@Composable
++fun NavGraph(navController: NavHostController) {
++    NavHost(navController, startDestination = "main_screen") {
++        composable("main_screen") {
++            MainScreen(navController = navController)
++        }
++        composable("logs_screen") {
++            LogsScreen()
++        }
++    }
++}
